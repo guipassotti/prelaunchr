@@ -1,0 +1,92 @@
+- twitter_message = "#Shaving is evolving. Excited for @harrys to launch."
+- facebook_link = "http://www.facebook.com/sharer/sharer.php?u=#{CGI::escape(root_url)}?ref=#{CGI::escape(@user.referral_code)}&title=Harrys"
+- twitter_link = "http://twitter.com/share?url=#{CGI::escape(root_url)}?ref=#{CGI::escape(@user.referral_code)}&text=#{CGI::escape(twitter_message)}"
+
+- referrals_count = @user.referrals.count
+- stops = User::REFERRAL_STEPS
+- found = nil
+- stops.reverse_each do |stop|
+  - if stop["count"] <= referrals_count and !found
+    - stop["selected"] = true
+    - found = stop
+  - else
+    - stop["selected"] = false
+
+- flash.each do |name, msg|
+  .alert{:class => name == "error" ? "alert-danger" : "alert-info"}
+    = msg
+
+.header
+  .content
+    %p.logo.brandon
+      = "Harry's"
+    %p.byline.brandon
+      = "THANK YOU FOR SIGNING UP"
+
+.hero
+  .page-content.clearfix
+    .mammoth
+      %span.need.brandon
+        = "Shaving Is"
+        %br
+        = "Evolving"
+    .share-wrap
+      %p.why.brandon
+        = "Don't leave your friends behind"
+      %p.title.brandon
+        = "INVITE FRIENDS &"
+        %br
+        = "Earn Product"
+      %p.subtitle.brandon
+        = "Share your unique link via email, Facebook"
+        %br
+        = "or Twitter and earn Harry's goods for"
+        %br
+        = "each friend who signs up."
+      %p.copy-link.brandon
+        = "#{root_url}?ref=#{@user.referral_code}"
+      .social-links
+        = link_to "", facebook_link, {class: "fb", target: "_blank"}
+        .sep
+        = link_to "", twitter_link, {class: "twit", target: "_blank"}
+
+%div{class: found ? "prizes prize-#{found["class"]}" : "prizes" }
+  .page-content
+    %p.callout.brandon
+      = "Here's How It Works:"
+    %ul.products.clearfix
+      %li.title.brandon
+        %p.friends
+          = "Friends Joined"
+        %p.rewards
+          = "Harry's Product"
+      - stops.each do |stop|
+        - classes = "product brandon"
+        - classes = "#{classes} selected" if stop["selected"]
+        - classes = "#{classes} last" if stop["class"] == 'five'
+        %li{class: classes}
+          .circle
+            = stop["count"]
+          .sep
+          %p
+            = stop["html"].html_safe
+          .tooltip
+            = image_tag stop["image"], style: "height: 254px"
+
+    .progress
+      .mover
+        .bar.clearfix
+          - if referrals_count == 0
+            %p.place.brandon
+              %span
+                = "No"
+              = " friends have joined...Yet!"
+            %p.place.brandon
+              %span
+                = referrals_count
+              = "#{referrals_count == 1 ? 'friend has' : 'friends have'} joined"
+            %p.check.brandon
+              = "Keep checking"
+            %p.ship.brandon
+              = "We ship to the U.S. (& Canada Soon)"
+            = link_to "Privacy Policy", "/privacy-policy" , {class: "policy brandon", target: "_blank"}

@@ -1,0 +1,31 @@
+- flash.each do |name, msg|
+  .alert{:class => name == "error" ? "alert-danger" : "alert-info"}
+    = msg
+
+.hero
+  %p.large.brandon
+    = "Harry's is live"
+  %p.small.brandon
+    = "Respecting the Face and Wallet"
+    %br
+    = "Since Like...Right Now."
+
+%div{class: Rails.application.config.ended ? "form-wrap clearfix ended" : "form-wrap clearfix" }
+  - if Rails.application.config.ended
+    %p.thanks.brandon
+      = "THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH."
+    %p.compiling.brandon
+      = "WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL"
+      %br
+      = "COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO"
+    %p.go-to.brandon
+      = "In the meantime, head to #{link_to('WWW.HARRYS.COM', 'http://www.harrys.com/')}"
+    %p.again.brandon
+      = "Thank You Again!"
+  - else
+    .key
+      %p.byline.brandon
+        = "Be the first to know"
+      = form_for @user, url: { :action => "create" } do |f|
+        = f.text_field :email, :placeholder => "Enter Email", class: "email brandon"
+        = f.submit "Step Inside", class: "submit brandon"
