@@ -6,22 +6,26 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 
 <head>
-  <title>Harry&#8217;s &ndash; Tell Friends, Shave for Free</title>
+  <title>Mindfuse.io is coming</title>
   <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
   <link rel="shortcut icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <meta property="og:title" content="Harry’s is coming!"/>
-  <meta property="og:description" content="Shaving is evolving. Didn’t want to leave you all behind. Check out Harry’s here."/>
+  <meta property="og:title" content="Mindfuse.io is coming"/>
+  <meta property="og:description" content="Progressive Research & Collaboration"/>
   <meta property="og:image" content="<%= asset_path("refer/truman.png") %>"/>
   <meta property="og:url" content="<%= root_url %>"/>
 
-  <% if @is_mobile %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <% if @is_mobile %>
     <% if @bodyId == 'home' %>
       <meta name="viewport" content="width=1600" />
     <% else %>
       <meta name="viewport" content="width=1120" />
     <% end %>
-  <% end %>
+  <% end %> -->
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

@@ -3,29 +3,39 @@
     = msg
 
 .hero
-  %p.large.brandon
-    = "Harry's is live"
-  %p.small.brandon
-    = "Respecting the Face and Wallet"
-    %br
-    = "Since Like...Right Now."
+  .container
+    %h1.large
+      %img{:src => "assets/mindfuseio.png", :alt => "Mindfuse.io"}/
+      %span
+        = "is coming"
+    %ul.reasons-list.fa-ul
+      %li
+        %i.fa-li.fa.fa-check
+        = "Find industry alliances."
+      %li
+        %i.fa-li.fa.fa-check
+        = "Increase grant opportunities."
+      %li
+        %i.fa-li.fa.fa-check
+        = "Solve real problems."
+    %img.devices{:src => "assets/devices.png", :alt => "Minduse.io works on all devices"}
 
 %div{class: Rails.application.config.ended ? "form-wrap clearfix ended" : "form-wrap clearfix" }
   - if Rails.application.config.ended
-    %p.thanks.brandon
+    %p.thanks
       = "THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH."
-    %p.compiling.brandon
+    %p.compiling
       = "WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL"
       %br
       = "COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO"
-    %p.go-to.brandon
+    %p.go-to
       = "In the meantime, head to #{link_to('WWW.HARRYS.COM', 'http://www.harrys.com/')}"
-    %p.again.brandon
+    %p.again
       = "Thank You Again!"
   - else
-    .key
-      %p.byline.brandon
-        = "Be the first to know"
+    %p.byline
+      = "Get industry grants and collaboration opportunities direct to your inbox."
+    .signup-form
       = form_for @user, url: { :action => "create" } do |f|
-        = f.text_field :email, :placeholder => "Enter Email", class: "email brandon"
-        = f.submit "Step Inside", class: "submit brandon"
+        = f.text_field :email, :placeholder => "Enter Email", class: "email"
+        = f.submit "Get Early Access", class: "submit"

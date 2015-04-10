@@ -18,44 +18,30 @@
 
 .header
   .content
-    %p.logo.brandon
-      = "Harry's"
-    %p.byline.brandon
-      = "THANK YOU FOR SIGNING UP"
+    %img{:src => "assets/mindfuseio.png", :alt => "Mindfuse.io"}/
+    %p
+      = "thank you for signing up"
 
 .hero
-  .page-content.clearfix
-    .mammoth
-      %span.need.brandon
-        = "Shaving Is"
-        %br
-        = "Evolving"
+  .container
     .share-wrap
-      %p.why.brandon
-        = "Don't leave your friends behind"
-      %p.title.brandon
-        = "INVITE FRIENDS &"
-        %br
-        = "Earn Product"
-      %p.subtitle.brandon
-        = "Share your unique link via email, Facebook"
-        %br
-        = "or Twitter and earn Harry's goods for"
-        %br
-        = "each friend who signs up."
-      %p.copy-link.brandon
+      %p.title
+        = "Invite superstar researchers you would want on your team."
+      %p.subtitle
+        = "Copy your unique link below and share via email, facebook or twitter and we will split our future revenues with you."
+      %p.copy-link
         = "#{root_url}?ref=#{@user.referral_code}"
       .social-links
-        = link_to "", facebook_link, {class: "fb", target: "_blank"}
+        = link_to "", facebook_link, {class: "fb", target: "_blank", title: "Share your unique link on Facebook"}
         .sep
-        = link_to "", twitter_link, {class: "twit", target: "_blank"}
+        = link_to "", twitter_link, {class: "twit", target: "_blank", title: "Share your unique link on Twitter"}
 
 %div{class: found ? "prizes prize-#{found["class"]}" : "prizes" }
-  .page-content
-    %p.callout.brandon
+  .container.page-content
+    %p.callout
       = "Here's How It Works:"
     %ul.products.clearfix
-      %li.title.brandon
+      %li.title
         %p.friends
           = "Friends Joined"
         %p.rewards
@@ -73,20 +59,23 @@
           .tooltip
             = image_tag stop["image"], style: "height: 254px"
 
+    %p
+      = "We will share the love and success of mindfuse by rewarding you for every one of your friends first successful projects."
+
     .progress
       .mover
         .bar.clearfix
           - if referrals_count == 0
-            %p.place.brandon
+            %p.place
               %span
                 = "No"
               = " friends have joined...Yet!"
-            %p.place.brandon
+            %p.place
               %span
                 = referrals_count
               = "#{referrals_count == 1 ? 'friend has' : 'friends have'} joined"
-            %p.check.brandon
+            %p.check
               = "Keep checking"
-            %p.ship.brandon
+            %p.ship
               = "We ship to the U.S. (& Canada Soon)"
             = link_to "Privacy Policy", "/privacy-policy" , {class: "policy brandon", target: "_blank"}
