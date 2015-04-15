@@ -36,46 +36,46 @@
         .sep
         = link_to "", twitter_link, {class: "twit", target: "_blank", title: "Share your unique link on Twitter"}
 
+    .for-example
+      %p
+        For example if you
+      %p
+        %strong
+          %i.fa.fa-star
+          refer 5 colleges
+      %p
+        and they all successfully complete a
+      %p
+        %strong
+          %i.fa.fa-file
+          $10,000 project
+      %p
+        we will transfer a total of
+      %p
+        %strong
+          %i.fa.fa-heart
+          $1,500 into your paypal account!
+      .scissors-icon
+        %i.fa.fa-scissors
+      .barcode-icon
+        %i.fa.fa-barcode
+
 %div{class: found ? "prizes prize-#{found["class"]}" : "prizes" }
   .container.page-content
-    %p.callout
-      = "Here's How It Works:"
-    %ul.products.clearfix
-      %li.title
-        %p.friends
-          = "Friends Joined"
-        %p.rewards
-          = "Harry's Product"
-      - stops.each do |stop|
-        - classes = "product brandon"
-        - classes = "#{classes} selected" if stop["selected"]
-        - classes = "#{classes} last" if stop["class"] == 'five'
-        %li{class: classes}
-          .circle
-            = stop["count"]
-          .sep
-          %p
-            = stop["html"].html_safe
-          .tooltip
-            = image_tag stop["image"], style: "height: 254px"
 
-    %p
-      = "We will share the love and success of mindfuse by rewarding you for every one of your friends first successful projects."
+    .referrals-count
+      %span
+        = referrals_count
+      = "#{referrals_count == 1 ? 'friend has' : 'friends have'} joined"
 
     .progress
       .mover
         .bar.clearfix
-          - if referrals_count == 0
-            %p.place
-              %span
-                = "No"
-              = " friends have joined...Yet!"
-            %p.place
-              %span
-                = referrals_count
-              = "#{referrals_count == 1 ? 'friend has' : 'friends have'} joined"
-            %p.check
-              = "Keep checking"
-            %p.ship
-              = "We ship to the U.S. (& Canada Soon)"
-            = link_to "Privacy Policy", "/privacy-policy" , {class: "policy brandon", target: "_blank"}
+
+    .we-will-share
+      %p
+        %strong
+          = "We will share the love and success of mindfuse by rewarding you for every one of your friends first successful projects."
+
+%p.text-center
+  = link_to "Privacy Policy", "/privacy-policy" , {class: "policy brandon", target: "_blank"}
