@@ -18,7 +18,7 @@
 
 .header
   .content
-    %img{:src => "assets/mindfuseio.png", :alt => "Mindfuse.io"}/
+    %img.logo{:src => "assets/mindfuseio.png", :alt => "Mindfuse.io"}
     %p
       = "thank you for signing up"
 
@@ -28,7 +28,7 @@
       %p.title
         = "Invite superstar researchers you would want on your team."
       %p.subtitle
-        = "Copy your unique link below and share via email, facebook or twitter and we will split our future revenues with you."
+        = "Copy your unique link below and share via email, Facebook or Twitter and we will split our future revenues with you."
       %p.copy-link
         = "#{root_url}?ref=#{@user.referral_code}"
       .social-links
@@ -37,24 +37,27 @@
         = link_to "", twitter_link, {class: "twit", target: "_blank", title: "Share your unique link on Twitter"}
 
     .for-example
-      %p
-        For example if you
-      %p
-        %strong
-          %i.fa.fa-star
-          refer 5 colleges
-      %p
-        and they all successfully complete a
-      %p
-        %strong
-          %i.fa.fa-file
-          $10,000 project
-      %p
-        we will transfer a total of
-      %p
-        %strong
-          %i.fa.fa-heart
-          $1,500 into your paypal account!
+      %h3
+        = "How it works?"
+      .wrap-text
+        %p
+          = "For example, if you"
+        %p
+          %strong
+            %i.fa.fa-star
+            = "refer 5 colleagues"
+        %p
+          = "and they all successfully complete a"
+        %p
+          %strong
+            %i.fa.fa-file
+            = "$10,000 project"
+        %p
+          = "we will transfer a total of"
+        %p
+          %strong
+            %i.fa.fa-heart
+            = "$1,500 into your Paypal account!"
       .scissors-icon
         %i.fa.fa-scissors
       .barcode-icon
@@ -74,8 +77,7 @@
 
     .we-will-share
       %p
-        %strong
-          = "We will share the love and success of mindfuse by rewarding you for every one of your friends first successful projects."
+        = "We will share the love and success of mindfuse by rewarding you for every one of your friends first successful projects."
 
-%p.text-center
-  = link_to "Privacy Policy", "/privacy-policy" , {class: "policy brandon", target: "_blank"}
+%p.policy
+  = link_to "Privacy Policy", "/privacy-policy" , {target: "_blank"}

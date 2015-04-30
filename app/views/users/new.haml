@@ -20,7 +20,7 @@
         = "Solve real problems."
     %img.devices{:src => "assets/devices.png", :alt => "Minduse.io works on all devices"}
 
-%div{class: Rails.application.config.ended ? "form-wrap clearfix ended" : "form-wrap clearfix" }
+%div{class: Rails.application.config.ended ? "form-wrap clearfix ended" : "form-wrap" }
   - if Rails.application.config.ended
     %p.thanks
       = "THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH."
@@ -29,7 +29,7 @@
       %br
       = "COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO"
     %p.go-to
-      = "In the meantime, head to #{link_to('WWW.HARRYS.COM', 'http://www.harrys.com/')}"
+      = "In the meantime, head to #{link_to('WWW.MINFUSE.IO', 'http://mindfuse.io/')}"
     %p.again
       = "Thank You Again!"
   - else

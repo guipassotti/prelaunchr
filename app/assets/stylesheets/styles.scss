@@ -44,6 +44,12 @@ form {
   clear: both;
 }
 
+.logo {
+  width: 220px;
+  height: 37px;
+  display: inline-block;
+}
+
 /* Home */
 
 #home {
@@ -61,29 +67,32 @@ form {
 
     .container {
       position: relative;
-      height: 400px;
-      width: 400px;
+      max-height: 420px;
+      width: 100%;
     }
 
     .large {
       text-align: center;
       margin-top: 30px;
       img {
-        width: 220px;
-        height: 37px;
+        width: 160px;
       }
       span {
         font-weight: bold;
-        font-size: 34px;
+        font-size: 26px;
         vertical-align: bottom;
+        line-height: 1.3;
       }
     }
 
     .reasons-list {
+      width: 240px;
+      display: block;
+      margin: 40px auto 45px;
       position: relative;
-      margin: 38px 0 0 80px;
+      left: 20px;
       li {
-        font-size: 18px;
+        font-size: 19px;
         margin-bottom: 5px;
         i {
           color: #FF8300;
@@ -93,10 +102,10 @@ form {
     }
 
     .devices {
-      position: absolute;
-      width: 320px;
-      bottom: -10px;
-      margin: 0 0 0 20px;
+      max-width: 320px;
+      width: 90%;
+      margin: 0 auto -10px;
+      display: block;
     }
 
     @media (min-width: 768px) {
@@ -108,13 +117,17 @@ form {
       .devices {
         left: 0;
         bottom: -10px;
-        width: 400px;
+        max-width: 400px;
         margin: 0;
+        position: absolute;
       }
       .reasons-list {
         position: absolute;
         bottom: 70px;
         right: 0;
+        left: auto;
+        width: auto;
+        margin: 0;
         li {
           font-size: 22px;
         }
@@ -131,6 +144,7 @@ form {
         }
         span {
           font-size: 45px;
+          line-height: 1.1;
         }
       }
     }
@@ -143,13 +157,16 @@ form {
       .devices {
         bottom: -10px;
         left: 0;
-        width: 480px;
+        max-width: 480px;
         margin: 0;
+        position: absolute;
       }
       .reasons-list {
         position: absolute;
         bottom: 100px;
         right: 50px;
+        width: auto;
+        margin: 0;
         li {
           font-size: 25px;
         }
@@ -166,23 +183,26 @@ form {
         }
         span {
           font-size: 45px;
+          line-height: 1.1;
         }
       }
     }
   }
 
-  .form-wrap{
-    margin: 0;
+  .form-wrap {
+    margin: 0 0 40px;
 
     .byline{
       font-size: 25px;
       color: #ff8300;
       text-align: center;
-      margin: 35px 20px 35px;
+      margin: 0;
+      padding: 35px 20px 35px;
     }
 
     .signup-form {
       text-align: center;
+      margin: 0 15px;
       form {
         display: inline-block;
       }
@@ -193,11 +213,15 @@ form {
       font-size: 16px;
       padding: 0 10px;
       border: 1px solid #c0c0c0;
-      width: auto;
+      width: 100%;
       outline: none;
       margin-right: -1px;
       line-height: 40px;
       display: block;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      box-shadow: 0;
+      -webkit-box-shadow: 0;
     }
 
     .submit{
@@ -208,11 +232,19 @@ form {
       font-size: 16px;
       padding: 0 20px;
       line-height: 40px;
+      width: 100%;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      box-shadow: 0;
+      -webkit-box-shadow: 0;
     }
 
     @media (min-width: 768px) {
       .email{
         width: 256px;
+      }
+      .submit {
+        width: auto;
       }
     }
 
@@ -336,51 +368,46 @@ form {
   background: #FFF;
 
   .header {
-    height: 80px;
+    min-height: 80px;
     text-align: center;
     img {
       width: 220px;
       height: 37px;
-      display: inline-block;
+      display: block;
+      margin: 25px auto 0;
     }
     p {
-      color: #c0c0c0;
+      color: #C2C8D3;
       font-weight: 700;
-      margin: 13px 0 0 10px;
+      margin: 10px 0 20px;
       display: inline-block;
-      font-size: 26px;
+      font-size: 22px;
       position: relative;
-      top: 7px;
     }
   }
 
-  .header .logo {
-    font-weight: normal;
-    font-size: 0;
-    line-height: 0;
-    margin-right: 14px;
-    letter-spacing: 1px;
-    background: url(/assets/refer/logo.png) 0 0 no-repeat;
-    background-size: 106px 19px;
-    height: 19px;
-    width: 106px;
-    margin-top: 15px;
-  }
-
-  .hero{
+  .hero {
     background: #d8d9db;
-    height: 350px;
-    overflow: hidden;
+    height: auto;
 
     .for-example {
       background: #f3f4f4;
-      float: right;
-      width: 500px;
-      padding: 25px 25px 20px 40px;
+      padding: 20px;
       border: 2px dashed #C5CAD3;
-      margin: 50px 0 0;
+      margin: 25px 0 30px;
       font-size: 16px;
       position: relative;
+      .wrap-text {
+      }
+      h3 {
+        margin: 0 0 15px;
+        color: #3A424A;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 7px 0;
+      }
       .barcode-icon {
         position: absolute;
         top: 0;
@@ -391,13 +418,12 @@ form {
       .scissors-icon {
         position: absolute;
         bottom: -20px;
-        right: 120px;
+        right: 20%;
         color: #666;
         font-size: 30px;
       }
       strong {
         color: #ff8300;
-        margin-left: 15px;
         i {
           width: 20px;
         }
@@ -405,49 +431,25 @@ form {
     }
   }
 
-  .mammoth{
-    width: 612px;
-    height: 394px;
-    background: url(/assets/refer/mammoth.png) 0 0 no-repeat;
-    background-size: 610px 394px;
-    overflow: hidden;
-    margin-top: 15px;
-    float: left;
-  }
+  .share-wrap {
+    float: none;
+    margin: 0 10px 0;
 
-  .mammoth .need{
-    color: #FFF;
-    font-size: 38px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 102px 0 0 72px;
-    display: block;
-    line-height: 56px;
-    letter-spacing: 4px;
-    text-align: center;
-    width: 284px;
-  }
-
-  .share-wrap{
-    float: left;
-    width: 500px;
-    margin-top: 20px;
-
-    .title{
-      font-size: 32px;
+    .title {
+      font-size: 26px;
       font-weight: bold;
       color: #3a424a;
       margin-top: 18px;
     }
 
-    .subtitle{
+    .subtitle {
       color: #565656;
       font-size: 14px;
       text-transform: none;
       margin-top: 15px;
     }
 
-    .copy-link{
+    .copy-link {
       border: 1px solid #D1D0C7;
       background: #FFF;
       padding: 10px;
@@ -457,85 +459,81 @@ form {
       margin: 20px auto 0;
     }
 
-    .social-links{
+    .social-links {
       width: 120px;
       height: 37px;
       margin: 25px auto 0;
       text-align: center;
+      a, div {
+        display: inline-block;
+      }
+      .fb {
+        background: url(/assets/fb.png);
+        background-size: 30px 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .8;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .twit {
+        background: url(/assets/twit.png);
+        background-size: 30px 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .8;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .sep {
+        height: 28px;
+        width: 1px;
+        background: #BAB9BA;
+        margin: 0 20px;
+      }
     }
 
-    .social-links a, .social-links div{
-      display: inline-block;
-    }
-
-    .social-links .fb{
-      background: url(/assets/refer/fb.png);
-      background-size: 30px 30px;
-      width: 30px;
-      height: 30px;
-    }
-
-    .social-links .twit{
-      background: url(/assets/refer/twit.png);
-      background-size: 30px 30px;
-      width: 30px;
-      height: 30px;
-    }
-
-    .social-links .sep{
-      height: 28px;
-      width: 1px;
-      background: #BAB9BA;
-      margin: 0 20px;
-    }
   }
 
-  .prizes{
+  .prizes {
     width: 100%;
-    background: #FFF;
+    background: #F9F9F9;
     padding-bottom: 30px;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
-  }
 
-  .prizes .page-content{
-    position: relative;
-  }
+    .page-content{
+      position: relative;
+    }
 
-  .prizes .callout{
-    text-align: center;
-    font-size: 16px;
-    color: #074E6F;
-    font-weight: bold;
-    margin: 20px 0 0 0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+    .callout{
+      text-align: center;
+      font-size: 16px;
+      color: #074E6F;
+      font-weight: bold;
+      margin: 20px 0 0 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-  .prizes .progress{
-    height: 4px;
-    width: 100%;
-    background-size: 1px 4px;
-    // position: absolute;
-    // top: 100px;
-    z-index: 0;
-    background: #E8E9EA;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-  }
+    .progress{
+      height: 4px;
+      width: 100%;
+      background-size: 1px 4px;
+      z-index: 0;
+      background: #ECE5DF;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+    }
 
-  .prizes .progress .mover{
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-  }
-
-  .prizes .progress .mover .bar{
-    background: #FE8200;
-    width: 165px;
-    height: 4px;
-    -webkit-background-size: 1px 4px;
-    background-size: 1px 4px;
+    .progress .mover .bar{
+      background: #FE8200;
+      width: 165px;
+      height: 4px;
+      -webkit-background-size: 1px 4px;
+      background-size: 1px 4px;
+    }
   }
 
   .prize-two .progress .mover .bar{ width: 312px; }
@@ -543,181 +541,80 @@ form {
   .prize-four .progress .mover .bar{ width: 820px; }
   .prize-five .progress .mover .bar{ width: 1120px; }
 
-
-  .prizes ul.products{
-    width: 100%;
-    margin-top: 30px;
-    position: relative;
-    z-index: 1;
-    list-style: none;
-    padding: 0;
-  }
-
-  .prizes .products li.title{
-    color: #074E6F;
-    font-weight: 500;
-    font-size: 14px;
-    float: left;
-    margin-right: 68px;
-    width: 165px;
-    font-weight: bold;
-  }
-
-  .prizes .products li.title .rewards{
-    margin-top: 45px;
-    letter-spacing: 2px;
-  }
-
-  .prizes .products li.product{
-    color: #074E6F;
-    width: 125px;
-    margin-right: 129px;
-    margin-top: 13px;
-    float: left;
-    position: relative;
-  }
-
-  .prizes .products li.product .circle{
-    height: 30px;
-    width: 30px;
-    border-radius: 15px;
-    border: 1px solid #DAD9D2;
+  .policy{
     text-align: center;
-    line-height: 30px;
-    color: #868282;
-    overflow: hidden;
-    background: #F1F0EE;
-    font-weight: bold;
-    margin: 0 auto;
-  }
-
-  .prizes .products li.product .sep{
-    width: 12px;
-    height: 2px;
-    background: transparent;
-    margin: 13px auto 13px;
-  }
-
-  .prizes .products li.product .caret{
-    width: 100%;
-    height: 10px;
-    background: url(/assets/refer/caret.png) center center no-repeat;
-    background-size: 16px 10px;
-    position: absolute;
-    bottom: -15px;
-  }
-
-  .prizes .products li.product.selected .caret{
-    background: url(/assets/refer/caret-selected.png) center center no-repeat;
-    background-size: 16px 10px;
-  }
-
-  .prizes .products li.product p{
-    text-align: center;
-    font-weight: 500;
-  }
-
-  .prizes .products li.product:last-child{
-    margin-right: 0;
-  }
-
-  .prizes .products li.product.last{
-    margin-right: 0;
-  }
-
-  .prizes .products li.product.selected .circle{
-    background: #995F5E !important;
-    border-color: #995F5E !important;
-    color: #FFF !important;
-  }
-
-
-  .prizes .products li.product.selected p{
-    color: #995F5E !important;
-  }
-
-  .prizes .products li.product:hover .circle{
-    color: #FFF;
-    background: #074E6F;
-    border-color: #074E6F;
-  }
-
-  .prizes .products li.product .tooltip{
-    height: 254px;
-    width: 190px;
-    border: 4px solid #074E6F;
-    position: absolute;
-    top: -285px;
-    left: -32px;
-    display: none;
-    background: #FFF;
-  }
-
-  .prizes .products li.product .tooltip img{
-    margin: 0 auto;
-    display: block;
-  }
-
-  .prizes .products li.product:hover .tooltip{
-    display: block;
-  }
-
-  .prizes p.place{
-    text-align: center;
-    font-size: 16px;
-    color: #074E6F;
-    width: 100%;
-    font-weight: 500;
-    margin-top: 30px;
-  }
-
-  .prizes p.place span{
-    color: #995F5E;
-  }
-
-  .prizes p.check{
-    text-align: center;
-    font-size: 16px;
-    color: #858181;
-    width: 100%;
-    font-weight: 500;
-    margin-top: 5px;
-  }
-
-  .prizes p.ship{
-    text-align: center;
-    font-size: 16px;
-    color: #858181;
-    width: 100%;
-    font-weight: 500;
-    margin-top: 50px;
-  }
-
-  a.policy{
-    text-align: center;
-    font-size: 12px;
-    color: #CCCCCC;
-    width: 100%;
-    font-weight: 500;
-    margin-top: 5px;
-    display: block;
-    text-decoration: none;
+    margin: 30px 0;
+    a {
+      font-size: 12px;
+      color: #CCCCCC;
+      width: 100%;
+      font-weight: 500;
+      margin-top: 5px;
+      display: block;
+      text-decoration: none;
+    }
   }
 
   .we-will-share {
     padding: 20px 0;
     text-align: center;
     color: #074E6F;
+    font-size: 20px;
     p {
       margin: 0;
     }
   }
 
   .referrals-count {
-    margin: 20px 0;
+    margin: 40px 0;
     text-align: center;
     font-weight: bold;
     color: #ff8300;
     font-size: 20px;
   }
+
+  @media (min-width: 768px) {
+    .header {
+      img {
+        width: 220px;
+        height: 37px;
+        display: inline-block;
+        margin: 0;
+      }
+      p {
+        margin: 13px 0 0 10px;
+        font-size: 26px;
+        position: relative;
+        top: 7px;
+      }
+    }
+    .share-wrap {
+      float: left;
+      width: 40%;
+      margin: 20px 0 0;
+      .title {
+        font-size: 32px;
+      }
+    }
+    .hero {
+      height: 350px;
+
+      .for-example {
+        width: 500px;
+        float: right;
+        margin-top: 45px;
+        padding: 20px 20px 20px 30px;
+        p {
+          margin: 0 0 7px 10px;
+        }
+        strong {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.privacy-policy {
+  padding: 40px 40px 20px;
 }
